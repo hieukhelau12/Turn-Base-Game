@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bodkaclq71t7n"]
+[gd_scene load_steps=11 format=4 uid="uid://yd2e2ehtj0lq"]
 
 [ext_resource type="Texture2D" uid="uid://7yhfds6ycvty" path="res://assets/tile_sets/Temple.aseprite" id="1_xd4uy"]
 [ext_resource type="PackedScene" uid="uid://cnmqwf76g0kbj" path="res://scenes/card_ui/card_ui.tscn" id="2_ffvsa"]

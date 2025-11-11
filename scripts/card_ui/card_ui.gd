@@ -9,7 +9,7 @@ signal reparent_requested(which_card_ui: CardUI)
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine	as CardStateMachine
 @onready var targets: Array[Node] = []
-
+@export var card: Card
 
 func _ready() -> void:
 	card_state_machine.init(self)
