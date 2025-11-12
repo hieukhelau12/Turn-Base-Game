@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Turn base game"
-run/main_scene="uid://bodkaclq71t7n"
+run/main_scene="uid://yd2e2ehtj0lq"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
