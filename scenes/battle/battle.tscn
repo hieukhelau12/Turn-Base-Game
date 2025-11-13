@@ -476,7 +476,7 @@ size = Vector2(640, 250)
 metadata/_edit_lock_ = true
 
 [node name="Global_Light" type="DirectionalLight2D" parent="."]
-color = Color(0.8047426, 0.8047426, 0.8047427, 1)
+color = Color(0.63899994, 0.63, 0.9, 1)
 energy = 0.0
 blend_mode = 2
 
