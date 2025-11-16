@@ -577,7 +577,6 @@ tile_map_data = PackedByteArray("AAAJAP//AAACAAAAAAAHAAAAAAACAAAAABAJAAoAAAACAAA
 tile_set = SubResource("TileSet_oiw7q")
 
 [node name="CardDropArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
