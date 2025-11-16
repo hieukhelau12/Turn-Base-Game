@@ -4,8 +4,8 @@ extends Control
 
 signal reparent_requested(which_card_ui: CardUI)
 
-@onready var color: ColorRect = $Color
-@onready var state: Label = $State
+#@onready var color: ColorRect = $Color
+@onready var state: Label = $Cost
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine	as CardStateMachine
 @onready var targets: Array[Node] = []

@@ -1,8 +1,9 @@
 [gd_scene load_steps=19 format=4 uid="uid://bi0t4jvd5y2k2"]
 
 [ext_resource type="Texture2D" uid="uid://bst6br4ceh6uo" path="res://assets/tile_sets/Temple.aseprite" id="1_nrddn"]
+[ext_resource type="PackedScene" uid="uid://d4mtt25js6vj" path="res://scenes/player/player.tscn" id="2_agsc7"]
 [ext_resource type="Texture2D" uid="uid://ckgqr0dt3uhro" path="res://assets/tile_sets/Temple_Probs_Atlas.tres" id="2_f4nlk"]
-[ext_resource type="Texture2D" uid="uid://6p03p0n2hpm3" path="res://assets/tile_0121.png" id="3_lm5nd"]
+[ext_resource type="PackedScene" uid="uid://bap3yrn1faojq" path="res://scenes/enemy/enemy.tscn" id="4_agsc7"]
 [ext_resource type="PackedScene" uid="uid://w7ckg608udn6" path="res://scenes/card_target_selector/card_target_selector.tscn" id="4_i3aow"]
 [ext_resource type="Script" uid="uid://dc6p55sxv1kgl" path="res://scripts/ui/hand.gd" id="5_tamo8"]
 [ext_resource type="PackedScene" uid="uid://cnmqwf76g0kbj" path="res://scenes/card_ui/card_ui.tscn" id="6_0ksiv"]
@@ -548,9 +549,6 @@ sources/0 = SubResource("TileSetAtlasSource_agsc7")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xd4uy"]
 size = Vector2(640, 250)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_py4tk"]
-size = Vector2(54, 51)
-
 [node name="Battle" type="Node2D"]
 metadata/_edit_lock_ = true
 
@@ -586,22 +584,15 @@ collision_layer = 2
 position = Vector2(320, 125)
 shape = SubResource("RectangleShape2D_xd4uy")
 
-[node name="Enemy" type="Area2D" parent="."]
-collision_layer = 4
+[node name="Player" parent="." instance=ExtResource("2_agsc7")]
+position = Vector2(158, 152)
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-position = Vector2(476, 121)
-scale = Vector2(3, 3)
-texture = ExtResource("3_lm5nd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(476, 122.5)
-shape = SubResource("RectangleShape2D_py4tk")
+[node name="Enemy" parent="." instance=ExtResource("4_agsc7")]
+position = Vector2(474, 152)
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("4_i3aow")]
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
-visible = false
 
 [node name="Hand" type="HBoxContainer" parent="BattleUI"]
 anchors_preset = 7
