@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ckgqr0dt3uhro"]
+
+[ext_resource type="Texture2D" uid="uid://dnnpir2jvsy6u" path="res://assets/tile_sets/Temple_Probs.aseprite" id="1_kfv8l"]
+
+[resource]
+atlas = ExtResource("1_kfv8l")
