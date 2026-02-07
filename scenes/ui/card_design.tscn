@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkjuyamm43k2y"]
+
+[ext_resource type="Texture2D" uid="uid://8fl71xe373nc" path="res://assets/cards/Card_Parts.aseprite" id="1_o0t7t"]
+[ext_resource type="SpriteFrames" uid="uid://df6rj6l7lgaib" path="res://assets/cards/Card_Sigils.aseprite" id="2_gqgqo"]
+[ext_resource type="FontFile" uid="uid://b2qq3yv7ijm1f" path="res://assets/alagard.ttf" id="2_l74lk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc1mw"]
+atlas = ExtResource("1_o0t7t")
+region = Rect2(0, 0, 64, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rjcn"]
+atlas = ExtResource("1_o0t7t")
+region = Rect2(64, 0, 64, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fke5x"]
+atlas = ExtResource("1_o0t7t")
+region = Rect2(128, 96, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1q00"]
+atlas = ExtResource("1_o0t7t")
+region = Rect2(128, 0, 64, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk10k"]
+atlas = ExtResource("1_o0t7t")
+region = Rect2(144, 128, 13, 13)
+
+[node name="Card_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 90.0
+texture = SubResource("AtlasTexture_wc1mw")
+stretch_mode = 2
+
+[node name="Background" type="TextureRect" parent="Border"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 90.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_5rjcn")
+stretch_mode = 2
+
+[node name="CostSigil" type="TextureRect" parent="Border"]
+layout_mode = 0
+offset_right = 17.0
+offset_bottom = 17.0
+texture = SubResource("AtlasTexture_fke5x")
+stretch_mode = 2
+
+[node name="Cost" type="RichTextLabel" parent="Border/CostSigil"]
+texture_filter = 3
+layout_mode = 0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 19.0
+offset_bottom = 17.0
+theme_override_fonts/normal_font = ExtResource("2_l74lk")
+bbcode_enabled = true
+text = "0"
+fit_content = true
+scroll_active = false
+tab_size = 0
+horizontal_alignment = 1
+
+[node name="DescZone" type="TextureRect" parent="Border"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_g1q00")
+stretch_mode = 2
+
+[node name="CardSigil" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_top = 17.0
+offset_right = 17.0
+offset_bottom = 33.999985
+
+[node name="SigilBorder" type="AnimatedSprite2D" parent="CardSigil"]
+position = Vector2(-7, -7)
+sprite_frames = ExtResource("2_gqgqo")
+animation = &"Fire"
+autoplay = "Fire"
+frame_progress = 0.022295645
+centered = false
+
+[node name="CardType" type="TextureRect" parent="CardSigil/SigilBorder"]
+show_behind_parent = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = -6.5
+offset_right = 6.5
+offset_bottom = 6.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_vk10k")
+stretch_mode = 2
